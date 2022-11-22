@@ -8,11 +8,12 @@ export default function App() {
 		<div className='container'>
 			<Weather />
 			<footer>
-				<p>
+				  <p className="open-code">This project was coded by {" "}
+					  <a href='https://www.linkedin.com/in/olena-yevtushok-1b95a2139/' rel="noreferrer" target="_blank"
+					  >Olena Yevtushok</a> {" "} and is {" "}
 					<a href='https://github.com/elenyevtushok/react-weather-app' rel="noreferrer" target="_blank"
-					>Open-source code</a>
+					  >Open-sourced on GitHub</a>
 				</p>
-				<p>Built by Olena Yevtushok</p>
 			</footer>
 		</div>
     </div>

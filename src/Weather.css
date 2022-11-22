@@ -1,4 +1,39 @@
 .Weather{
-	border: 1px solid #dadde1;
+	font-family: IBM Plex Sans,sans-serif;
+	color: #626976;
+	
+	padding: 20px;
+	margin: 30px auto;
+}
+.Weather form{
+	margin-bottom: 20px;
+}
+.Weather .today-weather-temperature {
+	font-size: 128px;
+	font-weight: 100;
+}
+.Weather .today-weather-degrees{
+	font-size: 30px;
+	font-weight: 100;
+	position: relative;
+	top: -70px;
+}
+.Weather img{
+	display: inline-block;
+}
+.Weather .today-weather-descripton{
+	font-size: 20px;
+	margin-bottom: 0;
+}
+.Weather .today-weather-city{
+	font-size: 40px;
+	font-weight: 500;
 }
 
+.Weather .today-weather-details{
+	font-weight: 400;
+	font-size: 18px;
+	margin: 30px auto;
+	text-align: center;
+	list-style: none;
+}

@@ -1,0 +1,14 @@
+body{
+	background-color: #f5f7fb;
+}
+.App{
+	font-family: IBM Plex Sans,sans-serif;
+	margin: 30px auto;
+	max-width: 800px;
+
+}
+.App footer{
+	display: block;
+	font-size: 13px;
+	text-align: center;
+}
