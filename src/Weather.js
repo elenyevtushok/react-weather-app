@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faWind } from '@fortawesome/free-solid-svg-icons';
+import { faTemperatureHalf } from '@fortawesome/free-solid-svg-icons';
+import { faDroplet } from '@fortawesome/free-solid-svg-icons';
 
 export default function Weather(props){
 	const [weatherData, setWeatherData] = useState({ready:false});
@@ -16,7 +23,7 @@ export default function Weather(props){
 			city: response.data.city,
 			iconUrl: response.data.condition.icon_url,
 			description: response.data.condition.description,
-			date: "Monday, 10:00",
+			date: new Date(response.data.time*1000),
 		});
 	}
 
@@ -45,14 +52,14 @@ export default function Weather(props){
 						
 				</div>
 
-					<h1 className="today-weather-city">{weatherData.city}</h1>
-					<p className="today-weather-date">{weatherData.date}</p>
+					<h1 className="today-weather-city"><small><FontAwesomeIcon icon={faLocationDot} />{" "}</small>{weatherData.city}</h1>
+					<p className="today-weather-date"><FormattedDate date={weatherData.date} /></p>
 			</div>
 			
 				<ul className="row today-weather-details justify-content-center">
-					<li className="col-sm-4">Feels like: {Math.round(weatherData.feels_like)}°C</li>
-					<li className="col-sm-4">Humidity: {weatherData.humidity}%</li>
-					<li className="col-sm-4">Wind: {weatherData.wind}{" "}km/h</li>
+					<li className="col-sm-4"><FontAwesomeIcon icon={faTemperatureHalf} />{" "}Feels like: {Math.round(weatherData.feels_like)}°C</li>
+					<li className="col-sm-4"><FontAwesomeIcon icon={faDroplet} />{" "}Humidity: {weatherData.humidity}%</li>
+					<li className="col-sm-4"><FontAwesomeIcon icon={faWind} />{" "}Wind: {weatherData.wind}{" "}km/h</li>
 			</ul>
 		</div>
 	</div>
