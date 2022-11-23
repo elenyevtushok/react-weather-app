@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
-import "./Weather.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faWind } from '@fortawesome/free-solid-svg-icons';
-import { faTemperatureHalf } from '@fortawesome/free-solid-svg-icons';
-import { faDroplet } from '@fortawesome/free-solid-svg-icons';
+import WeatherInfo from "./WeatherInfo";
+import "./Weather.css";
 
 export default function Weather(props){
 	const [weatherData, setWeatherData] = useState({ready:false});
@@ -30,39 +25,18 @@ export default function Weather(props){
 	if(weatherData.ready){
 	return( 
 		<div className="Weather container align-self-center">
-		<form>
+			<form>
 				<div className="row justify-content-center">
-				<div className="col-9 ">
-					<input type="search" placeholder="Enter a city.." className="form-control" />
-				</div>
-				<div className="col-3">
-					<input type = "submit" value="Search" className="btn btn-primary w-100" autoFocus="on" />
-				</div>
-			</div>
-		</form>
-			<div className="today-weather">
-			<div className="row justify-content-center">
-				<div className="col-2 today-weather-image align-self-center">
-						<img src={weatherData.iconUrl} alt={weatherData.description} width="100px" />
+					<div className="col-9 ">
+						<input type="search" placeholder="Enter a city.." className="form-control" />
 					</div>
 					<div className="col-3">
-						
-						<div className="today-weather-temperature ">{Math.round(weatherData.temperature)}<span className="today-weather-degrees">°C</span></div>
-					
-						
+						<input type = "submit" value="Search" className="btn btn-primary w-100" autoFocus="on" />
+					</div>
 				</div>
-
-					<h1 className="today-weather-city"><small><FontAwesomeIcon icon={faLocationDot} />{" "}</small>{weatherData.city}</h1>
-					<p className="today-weather-date"><FormattedDate date={weatherData.date} /></p>
-			</div>
-			
-				<ul className="row today-weather-details justify-content-center">
-					<li className="col-sm-4"><FontAwesomeIcon icon={faTemperatureHalf} />{" "}Feels like: {Math.round(weatherData.feels_like)}°C</li>
-					<li className="col-sm-4"><FontAwesomeIcon icon={faDroplet} />{" "}Humidity: {weatherData.humidity}%</li>
-					<li className="col-sm-4"><FontAwesomeIcon icon={faWind} />{" "}Wind: {weatherData.wind}{" "}km/h</li>
-			</ul>
+			</form>
+			<WeatherInfo data = {weatherData} />
 		</div>
-	</div>
 	);
 	}else{
 		let apiKey = "6546to02e3f603be8f5087a1de413b3a";
