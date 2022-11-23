@@ -8,9 +8,19 @@
 .Weather form{
 	margin-bottom: 20px;
 }
+.Weather .today-weather-image-temperature{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.Weather .today-weather-image{
+	display: block;
+	align-self: center;
+}
 .Weather .today-weather-temperature {
 	font-size: 128px;
 	font-weight: 100;
+
 }
 .Weather .today-weather-degrees{
 	font-size: 30px;
