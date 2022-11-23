@@ -43,11 +43,11 @@ export default function Weather(props){
 		<div className="Weather container align-self-center">
 			<form onSubmit={handleSubmit}>
 				<div className="row justify-content-center">
-					<div className="col-9 ">
-						<input type="search" placeholder="Enter a city.." className="form-control" autoFocus="on" onChange={handleCityChange} />
-					</div>
-					<div className="col-3">
-						<input type = "submit" value="Search" className="btn btn-primary w-100" />
+					<div className="input-group col-9 ">
+						<input type="search" placeholder="Enter a city.." className="form-control" autoFocus="on" aria-describedby="basic-addon2" onChange={handleCityChange} />
+						<div class="input-group-append">
+							<input class="btn btn-outline-secondary" type="submit" value="Search" />
+						</div>
 					</div>
 				</div>
 			</form>

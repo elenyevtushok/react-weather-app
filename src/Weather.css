@@ -16,6 +16,8 @@
 .Weather .today-weather-image{
 	display: block;
 	align-self: center;
+	margin-top: 10px;
+	margin-right: 10px;
 }
 .Weather .today-weather-temperature {
 	font-size: 128px;
@@ -50,4 +52,12 @@
 	margin: 30px auto;
 	text-align: center;
 	list-style: none;
+}
+
+.Weather .btn{
+	border-radius: 0 5px 5px 0;
+}
+.Weather .form-control:focus {
+	border-color: #00ff9d;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 255, 204, 0.6);
 }
