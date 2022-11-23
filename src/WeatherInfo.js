@@ -21,12 +21,11 @@ export default function WeatherInfo(props){
 						<h1 className="today-weather-city"><small><FontAwesomeIcon icon={faLocationDot} />{" "}</small>{props.data.city}</h1>
 						<p className="today-weather-date"><FormattedDate date={props.data.date} /></p>
 				</div>
-
-			<ul className="row today-weather-details justify-content-center">
-				<li className="col-sm-4"><FontAwesomeIcon icon={faTemperatureHalf} />{" "}Feels like: {Math.round(props.data.feels_like)}°C</li>
-				<li className="col-sm-4"><FontAwesomeIcon icon={faDroplet} />{" "}Humidity: {props.data.humidity}%</li>
-				<li className="col-sm-4"><FontAwesomeIcon icon={faWind} />{" "}Wind: {props.data.wind}{" "}km/h</li>
-			</ul>
+				<ul className="row today-weather-details justify-content-center">
+					<li className="col-sm-4"><FontAwesomeIcon icon={faTemperatureHalf} />{" "}Feels like: {Math.round(props.data.feels_like)}°C</li>
+					<li className="col-sm-4"><FontAwesomeIcon icon={faDroplet} />{" "}Humidity: {props.data.humidity}%</li>
+					<li className="col-sm-4"><FontAwesomeIcon icon={faWind} />{" "}Wind: {props.data.wind}{" "}km/h</li>
+				</ul>
 			</div>
 		</div>
 	)
