@@ -6,6 +6,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faWind } from '@fortawesome/free-solid-svg-icons';
 import { faTemperatureHalf } from '@fortawesome/free-solid-svg-icons';
 import { faDroplet } from '@fortawesome/free-solid-svg-icons';
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props){
 	return (
@@ -15,8 +16,7 @@ export default function WeatherInfo(props){
 					<div className="today-weather-image">
 						<WeatherIcon code={props.data.icon} alt={props.data.description} />
 					</div>
-					<div className="today-weather-temperature ">{Math.round(props.data.temperature)}<span className="today-weather-degrees">°C</span>
-					</div>	
+					<WeatherTemperature celsius = {props.data.temperature} />
 				</div>
 				<h1 className="today-weather-city"><small><FontAwesomeIcon icon={faLocationDot} />{" "}</small>{props.data.city}</h1>
 				<div className="today-weather-date"><FormattedDate date={props.data.date} /></div>
