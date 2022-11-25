@@ -41,7 +41,7 @@ export default function Weather(props){
 
 	if(weatherData.ready){
 	return( 
-		<div className="Weather container align-self-center">
+		<div className="Weather container">
 			<form onSubmit={handleSubmit}>
 				<div className="row justify-content-center">
 					<div className="input-group col-9 ">
