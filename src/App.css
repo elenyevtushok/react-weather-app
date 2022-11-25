@@ -6,23 +6,3 @@ body{
 	margin: 30px auto;
 	max-width: 800px;
 }
-.App .open-code a{
-	text-decoration: none;
-	color: #393b3fe0;
-	font-weight: 600;
-}
-.App .open-code a{
-	text-decoration: none;
-	color: #393b3fe0;
-	font-weight: 600;
-}
-.App .open-code a:hover{
-	color: #00ff9d;
-	text-decoration: underline;
-}
-.App footer{
-	display: block;
-	font-size: 15px;
-	text-align: center;
-	color: #626976;
-}

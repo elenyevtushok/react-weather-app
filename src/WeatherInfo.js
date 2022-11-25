@@ -18,7 +18,7 @@ export default function WeatherInfo(props){
 					</div>
 					<WeatherTemperature celsius = {props.data.temperature} />
 				</div>
-				<h1 className="today-weather-city"><small><FontAwesomeIcon icon={faLocationDot} />{" "}</small>{props.data.city}</h1>
+				<h1 className="today-weather-city"><small><FontAwesomeIcon icon={faLocationDot} />{" "}</small>{props.data.city}, {props.data.country}</h1>
 				<div className="today-weather-date"><FormattedDate date={props.data.date} /></div>
 				<ul className="row today-weather-details justify-content-center">
 					<li className="col-sm-4"><FontAwesomeIcon icon={faTemperatureHalf} />{" "}Feels like: {Math.round(props.data.feels_like)}°C</li>

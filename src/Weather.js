@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, CSSProperties } from "react";
 import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
+
+import { Rings } from 'react-loader-spinner';
 
 export default function Weather(props){
 	const [weatherData, setWeatherData] = useState({ready:false});
@@ -18,6 +20,7 @@ export default function Weather(props){
 			humidity: response.data.temperature.humidity,
 			wind: response.data.wind.speed,
 			city: response.data.city,
+			country: response.data.country,
 			icon: response.data.condition.icon,
 			description: response.data.condition.description,
 			date: new Date(response.data.time*1000),
@@ -54,10 +57,30 @@ export default function Weather(props){
 			</form>
 			<WeatherInfo data = {weatherData} />
 			<WeatherForecast coordinates={weatherData.coordinates} />
+			<footer>
+				<div className="open-code">
+					<a href='https://github.com/elenyevtushok/react-weather-app' rel="noreferrer" target="_blank"
+					>Open-source code</a>
+					,{" "}by {" "}
+					<a href='https://fancy-palmier-f557aa.netlify.app/' rel="noreferrer" target="_blank"
+					>Olena Yevtushok</a>
+				</div>
+			</footer>
 		</div>
 	);
 	}else{
 		search();
-		return "Loading";
+		return(
+			<Rings
+				height="90"
+				width="90"
+				color="#00ff9d"
+				radius="50"
+				wrapperStyle={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
+				wrapperClass="loader"
+				visible={true}
+				ariaLabel="rings-loading"
+			/>
+		)
 	}
 }
