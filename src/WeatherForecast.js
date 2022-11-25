@@ -18,7 +18,7 @@ export default function WeatherForecast(props){
 	}
 
 	function load(){
-		let apiKey = "6546to02e3f603be8f5087a1de413b3a";
+		let apiKey = "4f6e636etc17733b801df4o7b14ba35b";
 		let longitude = props.coordinates.longitude;
 		let latitude = props.coordinates.latitude;
 		let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
